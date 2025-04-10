@@ -1,0 +1,271 @@
+/* Base Styles */
+:root {
+  --primary-color: #4285f4;
+  --error-color: #d32f2f;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --dark-gray: #757575;
+  --white: #ffffff;
+  --divider-color: rgba(255, 255, 255, 0.3);
+  --overlay-color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Background and Container Styles */
+.police-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url('../../../assets/Images/signUpBg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.police-login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+  z-index: 1;
+}
+
+.police-login-content {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px !important;
+  border-radius: 10px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.305) !important;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+}
+
+.police-login-content h2 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: whitesmoke !important;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 6px !important;
+  font-size: 16px;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.error-message {
+  display: block;
+  margin-top: 5px;
+  color: var(--error-color);
+  font-size: 14px;
+}
+
+.form-group input.error,
+.form-group select.error {
+  border-color: var(--error-color);
+}
+
+/* OR Divider */
+.or-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: var(--dark-gray);
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.or-divider span {
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+/* Password Input Container */
+.password-input-container {
+  position: relative;
+}
+
+.password-input-container input {
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 5px;
+  color: var(--dark-gray);
+}
+
+.toggle-password:hover {
+  color: var(--primary-color);
+}
+
+/* Form Options */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 8px;
+}
+
+.forgot-password {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Button Styles */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 6px !important;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-button:hover {
+  background-color: #3367d6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* Signup Link */
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--dark-gray);
+}
+
+.signup-link link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .police-login-content {
+    padding: 25px;
+    backdrop-filter: none;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+@media (max-width: 480px) {
+  .police-login-content {
+    padding: 20px;
+  }
+
+  .police-login-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+
+  .toggle-password {
+    font-size: 1rem;
+    right: 8px;
+  }
+
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  .police-login-content {
+    padding: 15px;
+  }
+
+  .police-login-content h2 {
+    font-size: 1.6rem;
+  }
+}
